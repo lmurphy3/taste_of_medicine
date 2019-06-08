@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
   def create_row
     @recipe = Recipe.new
 
-    @recipe.image = params.fetch("image")
+    @recipe.image = params.fetch("image") if params.key?("image")
 
     if @recipe.valid?
       @recipe.save
@@ -42,7 +42,7 @@ class RecipesController < ApplicationController
   def update_row
     @recipe = Recipe.find(params.fetch("id_to_modify"))
 
-    @recipe.image = params.fetch("image")
+    @recipe.image = params.fetch("image") if params.key?("image")
 
     if @recipe.valid?
       @recipe.save
