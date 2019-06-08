@@ -1,6 +1,7 @@
 class HealthBenefitsController < ApplicationController
   def index
-    @health_benefits = HealthBenefit.page(params[:page]).per(10)
+    @q = HealthBenefit.ransack(params[:q])
+    @health_benefits = @q.result(:distinct => true).includes(:ingredient_health_benefits).page(params[:page]).per(10)
 
     render("health_benefit_templates/index.html.erb")
   end

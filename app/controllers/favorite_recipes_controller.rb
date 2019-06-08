@@ -10,7 +10,8 @@ class FavoriteRecipesController < ApplicationController
   end
 
   def index
-    @favorite_recipes = FavoriteRecipe.page(params[:page]).per(10)
+    @q = FavoriteRecipe.ransack(params[:q])
+    @favorite_recipes = @q.result(:distinct => true).includes(:recipe, :user).page(params[:page]).per(10)
 
     render("favorite_recipe_templates/index.html.erb")
   end
