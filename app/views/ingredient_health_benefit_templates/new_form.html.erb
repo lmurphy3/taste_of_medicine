@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for health_benefit_id start -->
-    <input type="text" id="health_benefit_id" name="health_benefit_id" class="form-control">
+    <%= select_tag(:health_benefit_id, options_from_collection_for_select(HealthBenefit.all, :id, :name, @ingredient_health_benefit.health_benefit_id), :class => "form-control") %>
     <!-- Input for health_benefit_id end -->
   </div>
   <!-- Label and input for health_benefit_id end -->
