@@ -34,7 +34,11 @@
       </dt>
       <!-- Display ingredient_id start -->
       <dd>
-        <%= @ingredient_health_benefit.ingredient_id %>
+        <% if @ingredient_health_benefit.ingredient.present? %>
+          <a href="/ingredients/<%= @ingredient_health_benefit.ingredient_id %>">
+            <%= @ingredient_health_benefit.ingredient.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display ingredient_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display health_benefit_id start -->
       <dd>
-        <%= @ingredient_health_benefit.health_benefit_id %>
+        <% if @ingredient_health_benefit.health_benefit.present? %>
+          <a href="/health_benefits/<%= @ingredient_health_benefit.health_benefit_id %>">
+            <%= @ingredient_health_benefit.health_benefit.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display health_benefit_id end -->
 

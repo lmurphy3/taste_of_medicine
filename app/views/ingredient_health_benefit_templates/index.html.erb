@@ -58,13 +58,21 @@
 
         <!-- Display ingredient_health_benefit.ingredient_id start -->
         <td>
-          <%= ingredient_health_benefit.ingredient.name %>
+          <% if ingredient_health_benefit.ingredient.present? %>
+            <a href="/ingredients/<%= ingredient_health_benefit.ingredient.id %>">
+              <%= ingredient_health_benefit.ingredient.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display ingredient_health_benefit.ingredient_id end -->
 
         <!-- Display ingredient_health_benefit.health_benefit_id start -->
         <td>
-          <%= ingredient_health_benefit.health_benefit.name %>
+          <% if ingredient_health_benefit.health_benefit.present? %>
+            <a href="/health_benefits/<%= ingredient_health_benefit.health_benefit.id %>">
+              <%= ingredient_health_benefit.health_benefit.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display ingredient_health_benefit.health_benefit_id end -->
 

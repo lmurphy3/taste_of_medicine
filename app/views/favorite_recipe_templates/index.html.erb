@@ -58,13 +58,21 @@
 
         <!-- Display favorite_recipe.user_id start -->
         <td>
-          <%= favorite_recipe.user.email %>
+          <% if favorite_recipe.user.present? %>
+            <a href="/users/<%= favorite_recipe.user.id %>">
+              <%= favorite_recipe.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite_recipe.user_id end -->
 
         <!-- Display favorite_recipe.recipe_id start -->
         <td>
-          <%= favorite_recipe.recipe.created_at %>
+          <% if favorite_recipe.recipe.present? %>
+            <a href="/recipes/<%= favorite_recipe.recipe.id %>">
+              <%= favorite_recipe.recipe.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite_recipe.recipe_id end -->
 
