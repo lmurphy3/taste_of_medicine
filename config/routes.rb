@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Ingredient health benefit resource:
+
+  # CREATE
+  get("/ingredient_health_benefits/new", { :controller => "ingredient_health_benefits", :action => "new_form" })
+  post("/create_ingredient_health_benefit", { :controller => "ingredient_health_benefits", :action => "create_row" })
+
+  # READ
+  get("/ingredient_health_benefits", { :controller => "ingredient_health_benefits", :action => "index" })
+  get("/ingredient_health_benefits/:id_to_display", { :controller => "ingredient_health_benefits", :action => "show" })
+
+  # UPDATE
+  get("/ingredient_health_benefits/:prefill_with_id/edit", { :controller => "ingredient_health_benefits", :action => "edit_form" })
+  post("/update_ingredient_health_benefit/:id_to_modify", { :controller => "ingredient_health_benefits", :action => "update_row" })
+
+  # DELETE
+  get("/delete_ingredient_health_benefit/:id_to_remove", { :controller => "ingredient_health_benefits", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Recipe ingredient resource:
 
   # CREATE
