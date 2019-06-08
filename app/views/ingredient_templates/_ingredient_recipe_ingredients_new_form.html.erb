@@ -1,0 +1,25 @@
+<!-- Form recipe_ingredient start -->
+<form action="/create_recipe_ingredient_from_ingredient" method="post">
+<!-- Form recipe_ingredient end -->
+
+  <!-- Label and input for recipe_id start -->
+  <div class="form-group">
+    <label for="recipe_id">
+      Recipe
+    </label>
+
+    <!-- Input for recipe_id start -->
+    <input type="text" id="recipe_id" name="recipe_id" class="form-control" value="<%= @recipe_ingredient.recipe_id %>">
+    <!-- Input for recipe_id end -->
+  </div>
+  <!-- Label and input for recipe_id end -->
+
+  <!-- Label and input for ingredient_id start -->
+  <!-- Input for ingredient_id start -->
+  <input type="hidden" name="ingredient_id" value="<%= @ingredient.id %>">
+  <!-- Input for ingredient_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create recipe ingredient
+  </button>
+</form>

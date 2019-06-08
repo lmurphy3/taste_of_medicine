@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/ingredient_health_benefits/new", { :controller => "ingredient_health_benefits", :action => "new_form" })
   post("/create_ingredient_health_benefit", { :controller => "ingredient_health_benefits", :action => "create_row" })
+  post("/create_ingredient_health_benefit_from_health_benefit", { :controller => "ingredient_health_benefits", :action => "create_row_from_health_benefit" })
+  post("/create_ingredient_health_benefit_from_ingredient", { :controller => "ingredient_health_benefits", :action => "create_row_from_ingredient" })
 
   # READ
   get("/ingredient_health_benefits", { :controller => "ingredient_health_benefits", :action => "index" })
@@ -28,6 +30,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/recipe_ingredients/new", { :controller => "recipe_ingredients", :action => "new_form" })
   post("/create_recipe_ingredient", { :controller => "recipe_ingredients", :action => "create_row" })
+  post("/create_recipe_ingredient_from_ingredient", { :controller => "recipe_ingredients", :action => "create_row_from_ingredient" })
+  post("/create_recipe_ingredient_from_recipe", { :controller => "recipe_ingredients", :action => "create_row_from_recipe" })
 
   # READ
   get("/recipe_ingredients", { :controller => "recipe_ingredients", :action => "index" })
@@ -49,6 +53,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/favorite_recipes/new", { :controller => "favorite_recipes", :action => "new_form" })
   post("/create_favorite_recipe", { :controller => "favorite_recipes", :action => "create_row" })
+  post("/create_favorite_recipe_from_recipe", { :controller => "favorite_recipes", :action => "create_row_from_recipe" })
 
   # READ
   get("/favorite_recipes", { :controller => "favorite_recipes", :action => "index" })

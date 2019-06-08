@@ -32,6 +32,21 @@ class FavoriteRecipesController < ApplicationController
     end
   end
 
+  def create_row_from_recipe
+    @favorite_recipe = FavoriteRecipe.new
+
+    @favorite_recipe.user_id = params.fetch("user_id")
+    @favorite_recipe.recipe_id = params.fetch("recipe_id")
+
+    if @favorite_recipe.valid?
+      @favorite_recipe.save
+
+      redirect_to("/recipes/#{@favorite_recipe.recipe_id}", notice: "FavoriteRecipe created successfully.")
+    else
+      render("favorite_recipe_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @favorite_recipe = FavoriteRecipe.find(params.fetch("prefill_with_id"))
 

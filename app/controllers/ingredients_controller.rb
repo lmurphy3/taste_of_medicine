@@ -6,6 +6,8 @@ class IngredientsController < ApplicationController
   end
 
   def show
+    @ingredient_health_benefit = IngredientHealthBenefit.new
+    @recipe_ingredient = RecipeIngredient.new
     @ingredient = Ingredient.find(params.fetch("id_to_display"))
 
     render("ingredient_templates/show.html.erb")

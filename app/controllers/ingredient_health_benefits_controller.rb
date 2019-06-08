@@ -32,6 +32,36 @@ class IngredientHealthBenefitsController < ApplicationController
     end
   end
 
+  def create_row_from_ingredient
+    @ingredient_health_benefit = IngredientHealthBenefit.new
+
+    @ingredient_health_benefit.ingredient_id = params.fetch("ingredient_id")
+    @ingredient_health_benefit.health_benefit_id = params.fetch("health_benefit_id")
+
+    if @ingredient_health_benefit.valid?
+      @ingredient_health_benefit.save
+
+      redirect_to("/ingredients/#{@ingredient_health_benefit.ingredient_id}", notice: "IngredientHealthBenefit created successfully.")
+    else
+      render("ingredient_health_benefit_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_health_benefit
+    @ingredient_health_benefit = IngredientHealthBenefit.new
+
+    @ingredient_health_benefit.ingredient_id = params.fetch("ingredient_id")
+    @ingredient_health_benefit.health_benefit_id = params.fetch("health_benefit_id")
+
+    if @ingredient_health_benefit.valid?
+      @ingredient_health_benefit.save
+
+      redirect_to("/health_benefits/#{@ingredient_health_benefit.health_benefit_id}", notice: "IngredientHealthBenefit created successfully.")
+    else
+      render("ingredient_health_benefit_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @ingredient_health_benefit = IngredientHealthBenefit.find(params.fetch("prefill_with_id"))
 
