@@ -53,6 +53,22 @@ class IngredientHealthBenefitsController < ApplicationController
     end
   end
 
+  def destroy_row_from_ingredient
+    @ingredient_health_benefit = IngredientHealthBenefit.find(params.fetch("id_to_remove"))
+
+    @ingredient_health_benefit.destroy
+
+    redirect_to("/ingredients/#{@ingredient_health_benefit.ingredient_id}", notice: "IngredientHealthBenefit deleted successfully.")
+  end
+
+  def destroy_row_from_health_benefit
+    @ingredient_health_benefit = IngredientHealthBenefit.find(params.fetch("id_to_remove"))
+
+    @ingredient_health_benefit.destroy
+
+    redirect_to("/health_benefits/#{@ingredient_health_benefit.health_benefit_id}", notice: "IngredientHealthBenefit deleted successfully.")
+  end
+
   def destroy_row
     @ingredient_health_benefit = IngredientHealthBenefit.find(params.fetch("id_to_remove"))
 

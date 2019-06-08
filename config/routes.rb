@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_ingredient_health_benefit/:id_to_remove", { :controller => "ingredient_health_benefits", :action => "destroy_row" })
+  get("/delete_ingredient_health_benefit_from_health_benefit/:id_to_remove", { :controller => "ingredient_health_benefits", :action => "destroy_row_from_health_benefit" })
+  get("/delete_ingredient_health_benefit_from_ingredient/:id_to_remove", { :controller => "ingredient_health_benefits", :action => "destroy_row_from_ingredient" })
 
   #------------------------------
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_recipe_ingredient/:id_to_remove", { :controller => "recipe_ingredients", :action => "destroy_row" })
+  get("/delete_recipe_ingredient_from_ingredient/:id_to_remove", { :controller => "recipe_ingredients", :action => "destroy_row_from_ingredient" })
+  get("/delete_recipe_ingredient_from_recipe/:id_to_remove", { :controller => "recipe_ingredients", :action => "destroy_row_from_recipe" })
 
   #------------------------------
 
@@ -56,6 +60,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_favorite_recipe/:id_to_remove", { :controller => "favorite_recipes", :action => "destroy_row" })
+  get("/delete_favorite_recipe_from_user/:id_to_remove", { :controller => "favorite_recipes", :action => "destroy_row_from_user" })
+  get("/delete_favorite_recipe_from_recipe/:id_to_remove", { :controller => "favorite_recipes", :action => "destroy_row_from_recipe" })
 
   #------------------------------
 

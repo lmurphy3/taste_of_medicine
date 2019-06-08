@@ -53,6 +53,22 @@ class FavoriteRecipesController < ApplicationController
     end
   end
 
+  def destroy_row_from_recipe
+    @favorite_recipe = FavoriteRecipe.find(params.fetch("id_to_remove"))
+
+    @favorite_recipe.destroy
+
+    redirect_to("/recipes/#{@favorite_recipe.recipe_id}", notice: "FavoriteRecipe deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @favorite_recipe = FavoriteRecipe.find(params.fetch("id_to_remove"))
+
+    @favorite_recipe.destroy
+
+    redirect_to("/users/#{@favorite_recipe.user_id}", notice: "FavoriteRecipe deleted successfully.")
+  end
+
   def destroy_row
     @favorite_recipe = FavoriteRecipe.find(params.fetch("id_to_remove"))
 

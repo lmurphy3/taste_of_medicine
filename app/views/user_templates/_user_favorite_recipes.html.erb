@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Favorite Recipes
+
+    <a data-toggle="collapse" href="#user_favorite_recipes_new_form">
+      Add favorite recipe
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.favorite_recipes.each do |favorite_recipe| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/favorite_recipes/<%= favorite_recipe.id %>">
+          <%= favorite_recipe.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
