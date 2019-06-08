@@ -1,6 +1,6 @@
 class IngredientHealthBenefitsController < ApplicationController
   def index
-    @ingredient_health_benefits = IngredientHealthBenefit.all
+    @ingredient_health_benefits = IngredientHealthBenefit.page(params[:page]).per(10)
 
     render("ingredient_health_benefit_templates/index.html.erb")
   end

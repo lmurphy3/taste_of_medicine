@@ -1,6 +1,6 @@
 class HealthBenefitsController < ApplicationController
   def index
-    @health_benefits = HealthBenefit.all
+    @health_benefits = HealthBenefit.page(params[:page]).per(10)
 
     render("health_benefit_templates/index.html.erb")
   end
