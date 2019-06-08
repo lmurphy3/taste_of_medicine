@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Favorite recipe resource:
+
+  # CREATE
+  get("/favorite_recipes/new", { :controller => "favorite_recipes", :action => "new_form" })
+  post("/create_favorite_recipe", { :controller => "favorite_recipes", :action => "create_row" })
+
+  # READ
+  get("/favorite_recipes", { :controller => "favorite_recipes", :action => "index" })
+  get("/favorite_recipes/:id_to_display", { :controller => "favorite_recipes", :action => "show" })
+
+  # UPDATE
+  get("/favorite_recipes/:prefill_with_id/edit", { :controller => "favorite_recipes", :action => "edit_form" })
+  post("/update_favorite_recipe/:id_to_modify", { :controller => "favorite_recipes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_favorite_recipe/:id_to_remove", { :controller => "favorite_recipes", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 

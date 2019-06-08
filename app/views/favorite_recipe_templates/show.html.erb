@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Favorite recipe #<%= @favorite_recipe.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/favorite_recipes" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link favorite_recipe start -->
+      <div class="col">
+        <a href="/favorite_recipes/<%= @favorite_recipe.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit favorite recipe
+        </a>
+      </div>
+      <!-- Edit link favorite_recipe end -->
+
+      <!-- Delete link favorite_recipe start -->
+      <div class="col">
+        <a href="/delete_favorite_recipe/<%= @favorite_recipe.id %>" class="btn btn-block btn-outline-secondary">
+          Delete favorite recipe
+        </a>
+      </div>
+      <!-- Delete link favorite_recipe end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @favorite_recipe.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Recipe
+      </dt>
+      <!-- Display recipe_id start -->
+      <dd>
+        <%= @favorite_recipe.recipe_id %>
+      </dd>
+      <!-- Display recipe_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@favorite_recipe.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@favorite_recipe.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
