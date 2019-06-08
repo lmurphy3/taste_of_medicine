@@ -1,0 +1,44 @@
+<!-- Validation failure messages -->
+<% if @health_benefit.present? %>
+  <% if @health_benefit.errors.any? %>
+    <% @health_benefit.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new health benefit
+</h1>
+
+
+<hr>
+
+<!-- Form health_benefit start -->
+<form action="/create_health_benefit" method="post">
+<!-- Form health_benefit end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @health_benefit.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create health benefit
+  </button>
+</form>
+
+<hr>
+
+<a href="/health_benefits">
+  Go back
+</a>

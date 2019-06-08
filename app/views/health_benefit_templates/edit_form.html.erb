@@ -1,0 +1,32 @@
+<h1>
+  Edit health benefit #<%= @health_benefit.id %>
+</h1>
+
+<hr>
+
+<!-- Form health_benefit start -->
+<form action="/update_health_benefit/<%= @health_benefit.id %>" method="post">
+<!-- Form health_benefit end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @health_benefit.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update health benefit
+  </button>
+</form>
+
+<hr>
+
+<a href="/health_benefits">
+  Go back
+</a>
