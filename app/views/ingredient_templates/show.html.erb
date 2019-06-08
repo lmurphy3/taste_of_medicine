@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link ingredient start -->
       <div class="col">
         <a href="/ingredients/<%= @ingredient.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit ingredient
         </a>
       </div>
-      <!-- Edit link ingredient end -->
 
-      <!-- Delete link ingredient start -->
       <div class="col">
         <a href="/delete_ingredient/<%= @ingredient.id %>" class="btn btn-block btn-outline-secondary">
           Delete ingredient
         </a>
       </div>
-      <!-- Delete link ingredient end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @ingredient.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@ingredient.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@ingredient.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "ingredient_templates/ingredient_recipe_ingredients" %>
@@ -71,4 +60,3 @@
     <%= render partial: "ingredient_templates/ingredient_ingredient_health_benefits" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

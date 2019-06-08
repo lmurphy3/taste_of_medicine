@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link recipe_ingredient start -->
       <div class="col">
         <a href="/recipe_ingredients/<%= @recipe_ingredient.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit recipe ingredient
         </a>
       </div>
-      <!-- Edit link recipe_ingredient end -->
 
-      <!-- Delete link recipe_ingredient start -->
       <div class="col">
         <a href="/delete_recipe_ingredient/<%= @recipe_ingredient.id %>" class="btn btn-block btn-outline-secondary">
           Delete recipe ingredient
         </a>
       </div>
-      <!-- Delete link recipe_ingredient end -->
     </div>
 
     <dl>
       <dt>
         Recipe
       </dt>
-      <!-- Display recipe_id start -->
       <dd>
         <% if @recipe_ingredient.recipe.present? %>
           <a href="/recipes/<%= @recipe_ingredient.recipe_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display recipe_id end -->
 
       <dt>
         Ingredient
       </dt>
-      <!-- Display ingredient_id start -->
       <dd>
         <% if @recipe_ingredient.ingredient.present? %>
           <a href="/ingredients/<%= @recipe_ingredient.ingredient_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display ingredient_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@recipe_ingredient.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@recipe_ingredient.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

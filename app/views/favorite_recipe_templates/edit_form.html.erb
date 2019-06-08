@@ -4,24 +4,16 @@
 
 <hr>
 
-<!-- Form favorite_recipe start -->
 <form action="/update_favorite_recipe/<%= @favorite_recipe.id %>" method="post">
-<!-- Form favorite_recipe end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for recipe_id start -->
   <div class="form-group">
     <label for="recipe_id">
       Recipe
     </label>
 
-    <!-- Input for recipe_id start -->
     <%= select_tag(:recipe_id, options_from_collection_for_select(Recipe.all, :id, :created_at, @favorite_recipe.recipe_id), :class => "form-control") %>
-    <!-- Input for recipe_id end -->
   </div>
-  <!-- Label and input for recipe_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update favorite recipe

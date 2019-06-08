@@ -5,33 +5,23 @@
 
 <hr>
 
-<!-- Form ingredient_health_benefit start -->
 <form action="/create_ingredient_health_benefit" method="post">
-<!-- Form ingredient_health_benefit end -->
 
-  <!-- Label and input for ingredient_id start -->
   <div class="form-group">
     <label for="ingredient_id">
       Ingredient
     </label>
 
-    <!-- Input for ingredient_id start -->
     <%= select_tag(:ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :name, @ingredient_health_benefit.ingredient_id), :class => "form-control") %>
-    <!-- Input for ingredient_id end -->
   </div>
-  <!-- Label and input for ingredient_id end -->
 
-  <!-- Label and input for health_benefit_id start -->
   <div class="form-group">
     <label for="health_benefit_id">
       Health benefit
     </label>
 
-    <!-- Input for health_benefit_id start -->
     <%= select_tag(:health_benefit_id, options_from_collection_for_select(HealthBenefit.all, :id, :name, @ingredient_health_benefit.health_benefit_id), :class => "form-control") %>
-    <!-- Input for health_benefit_id end -->
   </div>
-  <!-- Label and input for health_benefit_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create ingredient health benefit

@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @recipe.favorite_recipes.each do |favorite_recipe| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/favorite_recipes/<%= favorite_recipe.id %>">
           <%= favorite_recipe.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == favorite_recipe.user %>
           <a href="/delete_favorite_recipe_from_recipe/<%= favorite_recipe.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="recipe_favorite_recipes_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "recipe_templates/recipe_favorite_recipes_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
