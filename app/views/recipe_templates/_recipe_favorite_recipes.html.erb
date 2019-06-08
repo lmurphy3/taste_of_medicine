@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_favorite_recipe_from_recipe/<%= favorite_recipe.id %>">
-          Delete
-        </a>
+        <%if current_user == favorite_recipe.user %>
+          <a href="/delete_favorite_recipe_from_recipe/<%= favorite_recipe.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
