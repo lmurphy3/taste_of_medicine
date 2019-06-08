@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Recipe ingredient resource:
+
+  # CREATE
+  get("/recipe_ingredients/new", { :controller => "recipe_ingredients", :action => "new_form" })
+  post("/create_recipe_ingredient", { :controller => "recipe_ingredients", :action => "create_row" })
+
+  # READ
+  get("/recipe_ingredients", { :controller => "recipe_ingredients", :action => "index" })
+  get("/recipe_ingredients/:id_to_display", { :controller => "recipe_ingredients", :action => "show" })
+
+  # UPDATE
+  get("/recipe_ingredients/:prefill_with_id/edit", { :controller => "recipe_ingredients", :action => "edit_form" })
+  post("/update_recipe_ingredient/:id_to_modify", { :controller => "recipe_ingredients", :action => "update_row" })
+
+  # DELETE
+  get("/delete_recipe_ingredient/:id_to_remove", { :controller => "recipe_ingredients", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Favorite recipe resource:
 
   # CREATE

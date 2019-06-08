@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @recipe_ingredient.present? %>
+  <% if @recipe_ingredient.errors.any? %>
+    <% @recipe_ingredient.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new recipe ingredient
+</h1>
+
+
+<hr>
+
+<!-- Form recipe_ingredient start -->
+<form action="/create_recipe_ingredient" method="post">
+<!-- Form recipe_ingredient end -->
+
+  <!-- Label and input for recipe_id start -->
+  <div class="form-group">
+    <label for="recipe_id">
+      Recipe
+    </label>
+
+    <!-- Input for recipe_id start -->
+    <input type="text" id="recipe_id" name="recipe_id" class="form-control" value="<%= @recipe_ingredient.recipe_id %>">
+    <!-- Input for recipe_id end -->
+  </div>
+  <!-- Label and input for recipe_id end -->
+
+  <!-- Label and input for ingredient_id start -->
+  <div class="form-group">
+    <label for="ingredient_id">
+      Ingredient
+    </label>
+
+    <!-- Input for ingredient_id start -->
+    <input type="text" id="ingredient_id" name="ingredient_id" class="form-control" value="<%= @recipe_ingredient.ingredient_id %>">
+    <!-- Input for ingredient_id end -->
+  </div>
+  <!-- Label and input for ingredient_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create recipe ingredient
+  </button>
+</form>
+
+<hr>
+
+<a href="/recipe_ingredients">
+  Go back
+</a>
